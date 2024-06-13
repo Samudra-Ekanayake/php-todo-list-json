@@ -8,3 +8,12 @@ body {
     background-color: black;
     color: white;
 }
+
+.fatto {
+    background-color: green; 
+}
+
+.nonFatto {
+    background-color: red;
+}
+

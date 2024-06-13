@@ -11,6 +11,13 @@
 
     methods: {
 
+        fatto (index) {
+            if (this.todoList[index].completed === false) {
+                this.todoList[index].completed = true  
+            } else{ this.todoList[index].completed =  false}
+        }
+
+
 
     },
 
