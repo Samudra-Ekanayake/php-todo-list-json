@@ -29,6 +29,6 @@ $todoList = [
 
 header('Content-Type: application/json');
 
-$jsonString = json_encode($todoList);
+echo json_encode($todoList);
 
 ?>
