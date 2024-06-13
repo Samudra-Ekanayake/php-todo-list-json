@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
     <div id="app">
 
         <h1>Todolist</h1>
         <ul>
-            <li v-for="(element, i) in todoList"
-             :class="{fatto: element.completed, nonFatto: !element.completed}" @click="fatto(i)">
-             {{element.task}}</li>
+            <li v-for="(element, i) in todoList" :class="{fatto: element.completed, nonFatto: !element.completed}"
+                @click="fatto(i)">
+                {{element.task}}</li>
         </ul>
 
     </div>
 
     <script src="./main.js"></script>
 </body>
+
 </html>

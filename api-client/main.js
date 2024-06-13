@@ -1,29 +1,29 @@
+const { createApp } = Vue
 
-  const { createApp } = Vue
-
-  createApp({
+createApp({
     data() {
-      return {
-        todoList: [],
-      } 
+        return {
+            todoList: [],
+        }
     },
 
     methods: {
 
-        fatto (index) {
+        fatto(index) {
             if (this.todoList[index].completed === false) {
-                this.todoList[index].completed = true  
-            } else{ this.todoList[index].completed =  false}
+                this.todoList[index].completed = true
+            } else { this.todoList[index].completed = false }
         }
 
 
 
     },
 
-    mounted () {
+    mounted() {
         axios.get('../server.php').then(results => {
             console.log(results);
-      (this.todoList = results.data)}) 
+            (this.todoList = results.data)
+        })
 
     }
-  }).mount('#app')
+}).mount('#app')
