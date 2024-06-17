@@ -17,9 +17,13 @@
         <h1>Todolist</h1>
         <ul>
             <li v-for="(element, i) in todoList" :class="{fatto: element.completed, nonFatto: !element.completed}"
-                @click="fatto(i)">
-                {{element.task}}</li>
+                @click="fatto(i)">{{element.id}} {{element.task}}</li>
         </ul>
+
+        <input type="text" placeholder="Id" v-model="newId">
+        <input type="text" placeholder="Task" v-model="newTask"> 
+
+        <button @click="addTask">Aggiungi</button>
 
     </div>
 

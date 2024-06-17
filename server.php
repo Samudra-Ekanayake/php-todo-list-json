@@ -1,32 +1,29 @@
 <?php
-$todoList = [
-    [
-        'id' => 1,
-        'task' => 'Comprare il latte',
-        'completed' => false,
-    ],
-    [
-        'id' => 2,
-        'task' => 'Fare una passeggiata',
-        'completed' => true,
-    ],
-    [
-        'id' => 3,
-        'task' => 'Leggere un libro',
-        'completed' => false,
-    ],
-    [
-        'id' => 4,
-        'task' => 'Scrivere un articolo',
-        'completed' => false,
-    ],
-    [
-        'id' => 5,
-        'task' => 'Chiamare un amico',
-        'completed' => true,
-    ],
-];
+
+if(isset($_POST["id"]) && isset($_POST["task"])) {
+
+    $fileContent = file_get_contents("dati.json");
+
+    $todoList = json_decode($fileContent, true);
+
+    $newTask =[
+    "id" => $_POST["id"],
+    "task" => $_POST["task"]
+    ];
+
+    $todoList = $newTask; 
+
+    $todoListJson = json_encode($todoList);
+
+    file_put_contents("dati.json", $todoListJson); 
+
+
+};
+
+$fileContent = file_get_contents("dati.json");
+
+echo $fileContent;  
 
 header('Content-Type: application/json');
 
-echo json_encode($todoList);
+/* echo json_encode($todoList); */
